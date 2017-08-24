@@ -44,3 +44,77 @@
          (等式二) n=n1+2n2+1
         由(等式一)和(等式二)计算得到：n0=n2+1。原命题得证！
 #### 二叉树算法
+
+```java
+public class Node {
+    private int data;
+    private Node left;
+    private Node right;
+
+    public Node(int data) {
+        this.data = data;
+    }
+
+    public int getData() {
+        return data;
+    }
+
+    public void setData(int data) {
+        this.data = data;
+    }
+
+    public Node getLeft() {
+        return left;
+    }
+
+    public void setLeft(Node left) {
+        this.left = left;
+    }
+
+    public Node getRight() {
+        return right;
+    }
+
+    public void setRight(Node right) {
+        this.right = right;
+    }
+}
+
+```
+
+```java
+public class FindTree {
+
+    public void visit(int data) {
+        System.out.println(" --- " + data);
+    }
+
+    public void preOrder(Node node) {
+        if (node == null) {
+            return;
+        }
+        visit(node.getData());
+        preOrder(node.getLeft());
+        preOrder(node.getRight());
+    }
+
+    public void inOrder(Node node) {
+        if (node == null) {
+            return;
+        }
+        inOrder(node.getLeft());
+        visit(node.getData());
+        inOrder(node.getRight());
+    }
+
+    public void afterOrder(Node node) {
+        if (node == null) {
+            return;
+        }
+        afterOrder(node.getLeft());
+        afterOrder(node.getRight());
+        visit(node.getData());
+    }
+}
+
+```
