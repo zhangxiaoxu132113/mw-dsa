@@ -13,15 +13,26 @@ public class FindTree {
         if (node == null) {
             return;
         }
+        visit(node.getData());
         preOrder(node.getLeft());
         preOrder(node.getRight());
     }
 
     public void inOrder(Node node) {
-
+        if (node == null) {
+            return;
+        }
+        inOrder(node.getLeft());
+        visit(node.getData());
+        inOrder(node.getRight());
     }
 
     public void afterOrder(Node node) {
-
+        if (node == null) {
+            return;
+        }
+        afterOrder(node.getLeft());
+        afterOrder(node.getRight());
+        visit(node.getData());
     }
 }

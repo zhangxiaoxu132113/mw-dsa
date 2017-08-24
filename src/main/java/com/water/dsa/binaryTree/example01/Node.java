@@ -9,7 +9,7 @@ public class Node {
     private Node left;
     private Node right;
 
-    private Node(int data) {
+    public Node(int data) {
         this.data = data;
     }
 
